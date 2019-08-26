@@ -4,6 +4,7 @@
 
 body {
   font-family: sans-serif;
+  padding: 1rem;
 }
 
 h2 {
@@ -26,16 +27,22 @@ dt {
   padding: 1em;
 }
 
+dt:last-of-type {
+  border-bottom: 1px solid grey;
+}
+
 button {
   border: none;
   display: block;
   padding: 1em;
+  outline: none;
 }
 
 span {
   border: 1px solid;
   display: block;
   width: 1.5rem;
+  transition: all linear 0.1s;
 }
 
 span:first-of-type {
@@ -66,6 +73,21 @@ dt.accordion-open + dd {
   transition: max-height ease-in 0.2s;
 }
 
+dt.accordion-open:last-of-type + dd {
+  border-top: none;
+  border-bottom: 1px solid grey;
+}
+
 dt.accordion-open + dd p {
   margin: 1em 0;
+}
+
+dt.accordion-open span:first-of-type {
+  transform-origin: 50%;
+  transform: rotate(45deg) translate3d(0px, 2px, 0);
+}
+
+dt.accordion-open span:last-of-type {
+  transform-origin: 50%;
+  transform: rotate(-45deg) translate3d(0px, -1px, 0);
 }
