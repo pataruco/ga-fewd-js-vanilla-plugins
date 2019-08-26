@@ -65,6 +65,19 @@ p {
   margin: 0;
 }
 
+dt.accordion-open {
+  background-color: black;
+  color: white;
+}
+
+dt.accordion-open button {
+  background-color: black;
+}
+
+dt.accordion-open span {
+  border-color: white;
+}
+
 dt.accordion-open + dd {
   border: 1px solid grey;
   border-bottom: none;
