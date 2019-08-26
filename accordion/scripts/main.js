@@ -14,9 +14,10 @@ function closeAllAccordionsExcept(element) {
     },
   );
 
-  filteredAccordionTitles.forEach(accordionTitle =>
-    accordionTitle.classList.remove('accordion-open'),
-  );
+  filteredAccordionTitles.forEach(accordionTitle => {
+    accordionTitle.setAttribute('aria-expanded', false);
+    accordionTitle.classList.remove('accordion-open');
+  });
 }
 
 function openAccordion(event) {
@@ -28,6 +29,12 @@ function openAccordion(event) {
   } else {
     target = currentTarget.parentNode;
   }
+
   closeAllAccordionsExcept(target);
-  return target.classList.toggle('accordion-open');
+  target.classList.toggle('accordion-open');
+
+  if (target.classList.contains('accordion-open')) {
+    return target.setAttribute('aria-expanded', true);
+  }
+  return target.setAttribute('aria-expanded', false);
 }
