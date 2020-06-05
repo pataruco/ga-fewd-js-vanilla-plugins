@@ -1,4 +1,4 @@
-const accordionDomNode = document.querySelector('.js-badger-accordion');
+const accordionDomNode = document.querySelector(".js-badger-accordion");
 
 const accordion = new BadgerAccordion(accordionDomNode, {
   roles: {
